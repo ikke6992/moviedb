@@ -10,7 +10,7 @@ public class Review {
     @Id
     @GeneratedValue
     private long id;
-    private int stars;
+    private double stars;
     private String critique;
 
     @ManyToOne
@@ -19,13 +19,13 @@ public class Review {
     Review() {
     }
 
-    public Review(Movie movie, int stars, String critique) {
+    public Review(Movie movie, double stars, String critique) {
         this.movie = movie;
         this.stars = stars;
         this.critique = critique;
     }
 
-    public int getStars() {
+    public double getStars() {
         return stars;
     }
 

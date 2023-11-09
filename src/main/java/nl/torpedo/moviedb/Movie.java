@@ -35,6 +35,16 @@ public class Movie {
         reviews.add(review);
     }
 
+    public double getRating() {
+        double rating = 0;
+        int counter = 0;
+        for (Review review : reviews) {
+            rating += review.getStars();
+            counter++;
+        }
+        return counter == 0 ? -1 : rating / counter;
+    }
+
     public Movie(String name, String description) {
         this.name = name;
         this.description = description;
