@@ -9,8 +9,8 @@ public class Seeder implements CommandLineRunner {
     private final MovieRepository movieRepository;
     private final ReviewRepository reviewRepository;
 
-    private final Movie ts3 = new Movie("Toy Story", "What if toys were alive?");
-    private final Movie ts3 = new Movie("Toy Story 2", "What if toys were alive again?");
+    private final Movie ts1 = new Movie("Toy Story", "What if toys were alive?");
+    private final Movie ts2 = new Movie("Toy Story 2", "What if toys were alive again?");
     private final Movie ts3 = new Movie("Toy Story 3", "Cry your heart out");
 
     private final Movie lotr1 = new Movie("The Lord of the Rings: The FellowShip of the Ring", "EPIIIIIIIIIIIIIIIC!");
@@ -29,6 +29,8 @@ public class Seeder implements CommandLineRunner {
 
     public void seedMovies() {
 
+        movieRepository.save(ts1);
+        movieRepository.save(ts2);
         movieRepository.save(ts3);
         movieRepository.save(lotr1);
         movieRepository.save(lotr2);
