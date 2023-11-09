@@ -3,6 +3,7 @@ package nl.torpedo.moviedb;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Review {
@@ -12,15 +13,17 @@ public class Review {
     private int stars;
     private String critique;
 
+    @ManyToOne
+    private Movie movie;
+
     Review() {
     }
 
-    public Review(int stars, String critique) {
+    public Review(Movie movie, int stars, String critique) {
+        this.movie = movie;
         this.stars = stars;
         this.critique = critique;
     }
-
-
 
     public int getStars() {
         return stars;
