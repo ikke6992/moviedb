@@ -37,12 +37,10 @@ public class Movie {
 
     public double getRating() {
         double rating = 0;
-        int counter = 0;
         for (Review review : reviews) {
             rating += review.getStars();
-            counter++;
         }
-        return counter == 0 ? -1 : rating / counter;
+        return reviews.size() == 0 ? -1 : rating / reviews.size();
     }
 
     public Movie(String name, String description) {

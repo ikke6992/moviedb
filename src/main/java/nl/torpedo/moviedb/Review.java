@@ -33,6 +33,10 @@ public class Review {
         return critique;
     }
 
+    public String getMovieName() {
+        return movie.getName();
+    }
+
 
 
 
